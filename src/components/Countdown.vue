@@ -1,11 +1,12 @@
 <template>
   <div class="countdown">
-    <h1>倒计时模块 剩余{{ count }}秒</h1>
+    <h1>倒计时模块 剩余{{ count.second }}秒</h1>
   </div>
 </template>
 
 <script>
 export default {
+  props: ['count'],
   data () {
     return {
       count: 10
@@ -13,7 +14,7 @@ export default {
   },
   mounted () {
     this.handle = setInterval(() => {
-      this.count++
+      this.count.second++
     }, 1000)
   },
   destroyed () {
