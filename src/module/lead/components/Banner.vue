@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Countdown v-for="item in list" v-bind:count="item"></Countdown>
+    <Countdown v-for="item in list" v-bind:options="item"></Countdown>
     <div class="header E_PageModule" style="display: block;">
         <div class="banner">
             <img src="http://cdn6.jinxidao.com/group1/M00/00/8B/oYYBAFe-Tr2AOajaAADDVO6nFoo135.jpg?imageMogr2/thumbnail/640x/gravity/Center/crop/640x280|imageView2/2/interlace/1/q/85/">
@@ -17,17 +17,21 @@
 
 <script>
 import Countdown from './../../../components/Countdown'
+let countList = [{second: 3, cb: function (com) { window.console.log(this) }}, {second: 1}, {second: 113}]
 export default {
   components: {Countdown},
   data () {
     return {
       msg: 'Hello V3ue113112!2',
-      list: [{second: 11}, {second: 1}, {second: 113}]
+      list: countList
     }
   },
   methods: {
     login (id) {
       window.alert(1)
+    },
+    clickCountdown (param) {
+      window.alert(2)
     }
   }
 }

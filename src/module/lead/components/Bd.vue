@@ -1,5 +1,7 @@
 <template>
-  <div class="item-list horizontal-line E_PageModule" style="display: block;">
+  <div>
+      <Countdown v-bind:options="countDownOpts"></Countdown>
+      <div class="item-list horizontal-line E_PageModule" style="display: block;">
                                                     <div class="item horizontal-line J_Link" data-href="yaochufa://login/http%3A%2F%2Factivity-test.yaochufa.com%2Findex%2Flead%2Flead%3Fnoneedapp%3D1" data-title="每日签到打卡">
                 <div class="title">
                     <span class="title-text">
@@ -91,13 +93,18 @@
                     <span class="btn" style="color: rgb(255, 255, 255); background-color: rgb(255, 144, 0);">前往</span>
             </div>
     </div>
+  </div>
+  
 </template>
 
 <script>
+import Countdown from './../../../components/Countdown'
+let countDownOpts = {second: 3}
 export default {
+  components: {Countdown},
   data () {
     return {
-      msg: 'Hello V3ue113112!2'
+      countDownOpts: countDownOpts
     }
   }
 }
