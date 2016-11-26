@@ -19,8 +19,8 @@ var webpackConfig = merge(baseWebpackConfig, {
     devtool: config.build.productionSourceMap ? '#source-map' : false,
     output: {
         path: config.build.assetsRoot,
-        filename: utils.assetsPath('js/[name].js'), //源
-        chunkFilename: utils.assetsPath('js/[id].js') //源
+        filename: utils.assetsPath('js/[name].[chunkhash].js'), //源
+        chunkFilename: utils.assetsPath('js/[id].[chunkhash].js') //源
             //filename: path.join(config.build.assetsSubDirectory, '[name].[chunkhash].js'),
             //chunkFilename: path.join(config.build.assetsSubDirectory, '[id].js')
     },
@@ -43,7 +43,7 @@ var webpackConfig = merge(baseWebpackConfig, {
         new webpack.optimize.OccurenceOrderPlugin(),
         // extract css into its own file
         //new ExtractTextPlugin(utils.assetsPath('css/[name].[contenthash].css')), //源
-        new ExtractTextPlugin(utils.assetsPath('css/[name].css')),
+        new ExtractTextPlugin(utils.assetsPath('css/[name].[chunkhash].css')),
         //new ExtractTextPlugin(path.join(config.build.assetsSubDirectory, '[name].[contenthash].css')),
 
         // generate dist index.html with correct asset hash for caching.

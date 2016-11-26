@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="x5-orientation" content="portrait">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- DNS优化web加载速度 -->
+    <meta http-equiv='x-dns-prefetch-control' content='on'>
+    <link rel="dns-prefetch" href="//activity.yaochufa.com">
+    <link rel="dns-prefetch" href="//cdn6.jinxidao.com">
+    <link rel="dns-prefetch" href="//cdn7.jinxidao.com">
+    <link rel="stylesheet" href="//cdn-test.jinxidao.com/m/style/base.css?v=201610181035">
+    <title>做任务赚积分</title>
+    <script type="text/javascript" src="//cdn-test.jinxidao.com/m/js/active/mobileUtil.js"></script>
+    <script type="text/javascript">
+    mobileUtil.fixScreen();
+    var $html = document.querySelector("html"),
+        htmlSize = $html.getAttribute("style");
+    var $viewport = document.querySelector("meta[name=viewport]"),
+        viewport = $viewport.getAttribute("content");
+    var dpr = $html.dataset.dpr,
+        htmlFontSize = $html.style.fontSize.split("px")[0];
+    $viewport.setAttribute("content", 'initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no');
+    $html.setAttribute("style", 'font-size: ' + htmlFontSize / dpr + 'px;');
+    </script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+</body>
+
+</html>
